@@ -18,7 +18,7 @@ class _AddTargetState extends State<AddTarget> {
     TextTheme _textTheme = Theme.of(context).textTheme;
     return SafeArea(
         child: Scaffold(
-      appBar: AllAppbar(
+      appBar: const AllAppbar(
         headname: 'TARGET',
       ),
       body: ListView(
@@ -51,7 +51,7 @@ class _AddTargetState extends State<AddTarget> {
                             context: context,
                             initialDate: DateTime.now(),
                             firstDate: DateTime(2000),
-                            lastDate: DateTime.now());
+                            lastDate:DateTime(3000));
                         setState(() {});
                       },
                       icon: const Icon(Icons.calendar_month_outlined),
@@ -79,8 +79,8 @@ class _AddTargetState extends State<AddTarget> {
                         _endDate = await showDatePicker(
                             context: context,
                             initialDate: DateTime.now(),
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime.now());
+                            firstDate: DateTime.now(),
+                            lastDate: DateTime(300));
                         // print(s);
                         // DateUtils.dateOnly(_dateTime);
                         setState(() {});

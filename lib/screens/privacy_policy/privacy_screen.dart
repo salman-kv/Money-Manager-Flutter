@@ -45,7 +45,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
   Widget build(BuildContext context) {
     TextTheme _textTheme=Theme.of(context).textTheme;
     return SafeArea(child: Scaffold(
-      appBar: AllAppbar(headname: 'PRIVACY POLICY'),
+      appBar:const AllAppbar(headname: 'PRIVACY POLICY'),
       body: ListView(
         children: [
        Text(data,style: _textTheme.titleSmall,),

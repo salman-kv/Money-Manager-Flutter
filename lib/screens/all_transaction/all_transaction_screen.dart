@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:moneymanager/screens/drawer/drawer_card_widget/deleted_card.dart';
-import 'package:moneymanager/screens/drawer/filter_widget.dart';
+import 'package:moneymanager/screens/all_transaction/card/all_card.dart';
+import 'package:moneymanager/screens/all_transaction/filter_widget.dart';
 
-class DeletedScreen extends StatelessWidget {
-  const DeletedScreen({super.key});
+class AllTransaction extends StatelessWidget {
+  const AllTransaction({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class DeletedScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         // appBar: AllAppbar(headname: 'DELETED TRANSACTION',),
-        body:   DeletedCard(textTheme: Theme.of(context).textTheme),
+        body:   AllCard(textTheme: Theme.of(context).textTheme),
          floatingActionButton: FloatingActionButton(
           onPressed: () {
             bottemSort(context, size, _textTheme);

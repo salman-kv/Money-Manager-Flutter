@@ -12,6 +12,7 @@ Color mainColor=const Color.fromARGB(255, 198, 180, 20);
 ThemeData lightTheme=ThemeData(
   
   brightness: Brightness.light,
+  primarySwatch:Colors.blueGrey,
   primaryColor: const Color.fromARGB(255, 235, 235, 235),
   fontFamily:'archivo narrow'
  

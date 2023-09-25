@@ -6,16 +6,27 @@ Future<void> alerting(BuildContext context, String name) {
       builder: (ctx) {
         return AlertDialog(
           title: Text('do you want to $name'),
-          actions: const [
-            Icon(
+          actions:  [
+            IconButton(onPressed: (){
+              Navigator.of(context).pop();
+            }, icon: const Icon(
               Icons.close,
               color: Colors.red,
-            ),
-            Icon(
+            ),),
+            IconButton(onPressed: (){
+              snacks(context, name);
+              Navigator.of(context).pop();
+            }, icon:const Icon(
               Icons.check,
               color: Colors.green,
-            )
+            )),
+            
+           
           ],
         );
       });
+}
+
+snacks(BuildContext context,String name){
+  return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(name)));
 }

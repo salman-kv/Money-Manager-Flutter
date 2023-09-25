@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanager/screens/account_screen/alert.dart';
+import 'package:moneymanager/screens/account_screen/edit_profile.dart';
 import 'package:moneymanager/screens/privacy_policy/privacy_screen.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -12,30 +13,45 @@ class AccountScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(100)),
+                  Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(100)),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'SALMAN K V',
+                        style: _textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'SALMAN K V',
-                    style: _textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
+                  IconButton(onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
+                      return EditProfile();
+                    }));
+                  }, icon: const Icon(Icons.edit)),
                 ],
               ),
             ),
+          ],
+        ),
+        Column(
+          children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -69,20 +85,20 @@ class AccountScreen extends StatelessWidget {
                 ),
               ],
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+                  return const PrivacyScreen();
+                }));
+              },
+              child: Text(
+                'Privacy Policy',
+                textAlign: TextAlign.center,
+                style: _textTheme.titleMedium?.copyWith(
+                    color: Colors.red, decoration: TextDecoration.underline),
+              ),
+            )
           ],
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-              return const PrivacyScreen();
-            }));
-          },
-          child: Text(
-            'Privacy Policy',
-            textAlign: TextAlign.center,
-            style: _textTheme.titleMedium?.copyWith(
-                color: Colors.red, decoration: TextDecoration.underline),
-          ),
         )
       ],
     );

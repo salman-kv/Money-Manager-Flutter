@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:moneymanager/common_widget/money_manager.dart';
 
 class AllAppbar extends StatelessWidget implements PreferredSizeWidget {
   final headname;
-  AllAppbar({this.headname, super.key});
+  const AllAppbar({this.headname, super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(100);
@@ -32,7 +31,7 @@ class AllAppbar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Text(
                 headname,
-                style: TextStyle(
+                style:const TextStyle(
                   fontFamily: 'irish',
                   fontSize: 25,
                   fontWeight:FontWeight.w500,
@@ -42,10 +41,6 @@ class AllAppbar extends StatelessWidget implements PreferredSizeWidget {
           )),
         ],
       ),
-
-      // child: IconButton(onPressed: (){
-      //   Scaffold.of(context).openDrawer();
-      // }, icon: Icon(Icons.abc)),
     );
   }
 }

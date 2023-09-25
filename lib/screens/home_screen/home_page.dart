@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanager/screens/common_widget/search.dart';
-import 'package:moneymanager/screens/drawer/all_transactions.dart';
+import 'package:moneymanager/screens/all_transaction/transaction.dart';
 import 'package:moneymanager/screens/home_screen/single_card.dart';
 
 import 'package:moneymanager/screens/home_screen/target_widget.dart';
@@ -16,10 +16,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool _search = false;
 
-
   @override
   Widget build(BuildContext context) {
-      TextTheme _textTheme=Theme.of(context).textTheme;
+    TextTheme _textTheme = Theme.of(context).textTheme;
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,20 +55,25 @@ class _HomePageState extends State<HomePage> {
             height: 5,
           ),
           const TotalIncomeExpense(),
-           const SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Recent Transaction',style:_textTheme.titleMedium?.copyWith(
-                color: const Color.fromARGB(255, 123, 121, 121)
-              ),),
-              TextButton(onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
-                  return AllTransaction();
-                }));
-              }, child: Text('See All'))
+              Text(
+                'Recent Transaction',
+                style: _textTheme.titleMedium
+                    ?.copyWith(color: const Color.fromARGB(255, 123, 121, 121)),
+              ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (ctx) {
+                      return const AllTransactionScreen();
+                    }));
+                  },
+                  child: const Text('See All'))
             ],
           ),
           // const SizedBox(

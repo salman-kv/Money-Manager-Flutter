@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneymanager/screens/account_screen/alert.dart';
 import 'package:moneymanager/theme/theme_constants.dart';
 
 class CatogoryCard extends StatelessWidget {
@@ -22,10 +23,17 @@ class CatogoryCard extends StatelessWidget {
             Text('Target', style: _textTheme.titleLarge),
             const Spacer(),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                alerting(context, 'edit');
+              },
               icon: const Icon(Icons.edit),
             ),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
+            IconButton(
+              onPressed: () {
+                alerting(context, 'delete');
+              },
+              icon: const Icon(Icons.delete),
+            )
           ],
         ),
       ),

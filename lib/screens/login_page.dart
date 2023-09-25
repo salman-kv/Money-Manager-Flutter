@@ -99,7 +99,7 @@ class LoginPage extends StatelessWidget {
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(builder: ((ctx) {
-                                return MainPage();
+                                return const MainPage();
                               })), (route) => false);
                             },
                             style: ElevatedButton.styleFrom(
@@ -112,7 +112,7 @@ class LoginPage extends StatelessWidget {
                                 )),
                             child: const Text(
                               'login',
-                              style: TextStyle(fontFamily: 'irish'),
+                              style: TextStyle(fontFamily: 'irish',color: Colors.black),
                             ),
                           )
                         ],

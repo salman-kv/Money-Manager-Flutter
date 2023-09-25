@@ -7,14 +7,16 @@ class TotalIncomeExpense extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      width: double.infinity,
-      child: Row(
-        children: [
-          totalBox(context, incomeColor,39000.62),
-          const SizedBox(width: 10,),
-          totalBox(context, expenseColor,6000.101),
-        ],
+    return SizedBox(
+      child: SizedBox(
+        width: double.infinity,
+        child: Row(
+          children: [
+            totalBox(context, incomeColor,39000.62),
+            const SizedBox(width: 10,),
+            totalBox(context, expenseColor,6000.101),
+          ],
+        ),
       ),
     );
   }

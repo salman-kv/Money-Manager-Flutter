@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:moneymanager/screens/all_transaction/all_transaction_screen.dart';
 import 'package:moneymanager/screens/app_bar/all_appbar.dart';
-import 'package:moneymanager/screens/drawer/deleted_screen.dart';
-import 'package:moneymanager/screens/drawer/expense_screen.dart';
-import 'package:moneymanager/screens/drawer/income_screen.dart';
+import 'package:moneymanager/screens/all_transaction/deleted_screen.dart';
+import 'package:moneymanager/screens/all_transaction/expense_screen.dart';
+import 'package:moneymanager/screens/all_transaction/income_screen.dart';
 
-class AllTransaction extends StatefulWidget {
-  const AllTransaction({super.key});
+class AllTransactionScreen extends StatefulWidget {
+  const AllTransactionScreen({super.key});
 
   @override
-  State<AllTransaction> createState() => _AllTransactionState();
+  State<AllTransactionScreen> createState() => _AllTransactionState();
 }
 
-class _AllTransactionState extends State<AllTransaction> with SingleTickerProviderStateMixin{
+class _AllTransactionState extends State<AllTransactionScreen> with SingleTickerProviderStateMixin{
    late final TabController _controller = TabController(length: 4, vsync: this);
 
   @override
   Widget build(BuildContext context) {
     TextTheme _textTheme=Theme.of(context).textTheme;
     return SafeArea(child: Scaffold(
-      appBar: AllAppbar(headname: 'All Transaction'),
+      appBar:const AllAppbar(headname: 'All Transaction'),
       body: Scaffold(
         appBar:TabBar(
        indicatorColor: Colors.black,
@@ -33,8 +34,8 @@ class _AllTransactionState extends State<AllTransaction> with SingleTickerProvid
         ]) ,
         body: TabBarView(
           controller: _controller,
-          children: [
-            DeletedScreen(),
+          children: const [
+       AllTransaction(),
         IncomeScreen(),
         ExpenseScreen(),
         DeletedScreen()

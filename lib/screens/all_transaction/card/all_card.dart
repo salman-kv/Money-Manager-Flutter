@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:moneymanager/screens/all_transaction/card/income_card.dart';
 import 'package:moneymanager/screens/common_widget/search.dart';
-import 'package:moneymanager/screens/drawer/drawer_card_widget/income_card.dart';
 import 'package:moneymanager/theme/theme_constants.dart';
 
-class DeletedCard extends StatelessWidget {
+class AllCard extends StatelessWidget {
   final textTheme;
 
-  const DeletedCard({required this.textTheme, super.key});
+  const AllCard({required this.textTheme, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,28 +16,28 @@ class DeletedCard extends StatelessWidget {
         Expanded(
             child: ListView(
           children: [
-            deletedCard(context, 1),
-            deletedCard(context, 2),
-            deletedCard(context, 3),
-            deletedCard(context, 4),
-            deletedCard(context, 5),
-            deletedCard(context, 4),
-            deletedCard(context, 5),
-            deletedCard(context, 5),
-            deletedCard(context, 5),
-            deletedCard(context, 6),
-            deletedCard(context, 1),
-            deletedCard(context, 3),
-            deletedCard(context, 2),
-            deletedCard(context, 2),
-            deletedCard(context, 2),
+            allCard(context, 1),
+            allCard(context, 2),
+            allCard(context, 3),
+            allCard(context, 4),
+            allCard(context, 5),
+            allCard(context, 4),
+            allCard(context, 5),
+            allCard(context, 5),
+            allCard(context, 5),
+            allCard(context, 6),
+            allCard(context, 1),
+            allCard(context, 3),
+            allCard(context, 2),
+            allCard(context, 2),
+            allCard(context, 2),
           ],
         ))
       ],
     );
   }
 
-  Widget deletedCard(BuildContext context, int i) {
+  Widget allCard(BuildContext context, int i) {
     final _textTheme = textTheme;
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -68,9 +68,9 @@ class DeletedCard extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: Color.fromARGB(50, 4, 45, 114),
+                  color: const Color.fromARGB(50, 4, 45, 114),
                 ),
-                margin: EdgeInsets.all(0),
+                margin: const EdgeInsets.all(0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -134,4 +134,5 @@ class DeletedCard extends StatelessWidget {
       ),
     );
   }
+
 }

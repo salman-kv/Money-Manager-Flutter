@@ -1,41 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:moneymanager/screens/account_screen/alert.dart';
 import 'package:moneymanager/screens/common_widget/search.dart';
-import 'package:moneymanager/screens/drawer/drawer_card_widget/income_card.dart';
+import 'package:moneymanager/screens/all_transaction/edit_transaction.dart';
 import 'package:moneymanager/theme/theme_constants.dart';
 
-class ExpenseCard extends StatelessWidget {
+class IncomeCard extends StatelessWidget {
   final textTheme;
 
-  const ExpenseCard({required this.textTheme, super.key});
+  const IncomeCard({required this.textTheme, super.key});
 
   @override
   Widget build(BuildContext context) {
-    //  final _textTheme=textTheme;
+    // final _textTheme = textTheme;
     return Column(
       children: [
         const Search(),
         Expanded(
             child: ListView(
           children: [
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
-            expenseCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
+            incomeCard(context),
           ],
         ))
       ],
     );
   }
 
-  Widget expenseCard(BuildContext context) {
+  Widget incomeCard(BuildContext context) {
     final _textTheme = textTheme;
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -66,7 +67,7 @@ class ExpenseCard extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: const Color.fromARGB(49, 195, 103, 69),
+                  color: const Color.fromARGB(138, 200, 230, 201),
                 ),
                 margin: const EdgeInsets.all(0),
                 child: Column(
@@ -115,4 +116,43 @@ class ExpenseCard extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<void> longpress(BuildContext context) {
+  return showDialog(
+      context: context,
+      builder: ((context) {
+        return AlertDialog(
+          title: const Text(
+            'Edit or Delete',
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+          ),
+          actions: [
+            IconButton(
+                onPressed: () async{
+                 await Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
+                    return const EditTransactionScreen();
+                  }));
+                  // ignore: use_build_context_synchronously
+                  Navigator.of(context).pop();
+                  
+                },
+                icon: const Icon(
+                  Icons.edit,
+                )),
+            IconButton(
+                onPressed: () async{
+                 await alerting(context, 'delete');
+                  // ignore: use_build_context_synchronously
+                  Navigator.of(context).pop();
+                  
+                },
+                icon: const Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                )),
+          ],
+        );
+      }));
 }

@@ -8,7 +8,7 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:moneymanager/screens/graph/graph_screen.dart';
 import 'package:moneymanager/screens/home_screen/home_page.dart';
-import 'package:moneymanager/screens/transaction/transaction_screen.dart';
+import 'package:moneymanager/screens/all_transaction/transaction_screen.dart';
 
 //main page here i want to change the body and the appbar name
 
@@ -21,12 +21,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int val = 2;
-  final pages = [
-    const TransactionScreen(),
+  final pages = const [
+     TransactionScreen(),
     CatogoryIncome(),
-    const HomePage(),
+     HomePage(),
     GraphScreen(),
-    const AccountScreen(),
+     AccountScreen(),
   ];
 
   @override
